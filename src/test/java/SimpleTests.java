@@ -1,6 +1,7 @@
 import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
 
+import static io.qameta.allure.Allure.step;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
 public class SimpleTests {
@@ -17,13 +18,23 @@ public class SimpleTests {
 
     @Test
     void ThirdTest() {
-        assertTrue(false);
+        step("Step one", () -> {
+            System.out.println("Hello world");
+        });
+        step("Step one", () -> {
+            assertTrue(false);
+        });
     }
 
     @Test
     @Tag("smoke")
     void FourthTest() {
-        assertTrue(true);
+        step("Step one", () -> {
+            System.out.println("Hello world");
+        });
+        step("Step one", () -> {
+            assertTrue(true);
+        });
     }
 
     @Test
